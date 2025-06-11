@@ -7,7 +7,10 @@ export async function uploadFile(file: File): Promise<void> {
     const formData = new FormData();
     formData.append("file", file);
 
-    const response = await fetch("http://localhost:3001/api/files/upload", {
+    // Api url fetch from vite env
+    const apiUrl = import.meta.env.VITE_API_URL
+
+    const response = await fetch(apiUrl, {
         method: "POST",
         body: formData,
     });

@@ -1,54 +1,94 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# React Uploader App
 
-Currently, two official plugins are available:
+A simple file uploader built with **React**, **Vite**, **TypeScript**, and styled using **Shopify Polaris**.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 📦 Install dependencies
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+```bash
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 🚀 Available Scripts
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+### Start Development Server
+
+```bash
+npm run dev
 ```
+
+- Runs on: [http://localhost:5173](http://localhost:5173)
+
+### Build for Production
+
+```bash
+npm run build
+```
+
+## ⚙ Tech Stack
+
+- React 18
+- Vite
+- TypeScript
+- Shopify Polaris (v13)
+- ESLint
+
+---
+
+## 🎨 Shopify Polaris UI Components
+
+This app uses [Shopify Polaris](https://polaris.shopify.com/components) for the UI:
+
+```tsx
+import { Card, Button } from '@shopify/polaris';
+```
+
+You can explore Polaris components here:  
+https://polaris.shopify.com/components
+
+---
+
+## 🌐 Environment Variables
+
+Create a `.env` file in the root:
+
+```bash
+VITE_API_BASE_URL=http://localhost:3001/api
+```
+
+Use inside code:
+
+```ts
+const apiUrl = import.meta.env.VITE_API_BASE_URL;
+```
+
+---
+
+## 📂 Project Structure
+
+```bash
+src/
+  components/     # Reusable UI components
+  pages/          # Main pages
+  hooks/          # Custom React hooks
+  utils/          # Utility functions
+public/           # Static assets
+dist/             # Production build output
+vite.config.ts    # Vite configuration
+tsconfig.json     # TypeScript configuration
+.eslintrc         # ESLint configuration
+package.json      # Project metadata & scripts
+```
+
+---
+
+## 🔗 Useful Links
+
+- [Polaris Components](https://polaris.shopify.com/components)
+- [Vite Documentation](https://vitejs.dev/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [ESLint](https://eslint.org/)
